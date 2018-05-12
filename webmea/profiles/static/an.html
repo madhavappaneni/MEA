@@ -1,0 +1,36 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+    		<section id="two" class="wrapper style1 special">
+				<div class="inner">
+					<header>
+						<h2>Our Team</h2>
+						<p>Some content here</p>
+					</header>
+					{% if profile_list %}
+					   {% for profile in profile_list %}
+
+					<div class="flex flex-4">
+						<div class="box person">
+							<div class="image round">
+
+								{% load staticfiles %}
+								<img src="{% static 'images/mealogobase.png' %}" height="200px" width="200px" alt="My image"/>
+							</div>
+
+
+							<h3>{{ profile.name }}</h3>
+							<p>post here</p>
+						</div>
+
+					</div>
+					    {% endfor %}
+						{% else %}
+    						<p>No polls are available.</p>
+						{% endif %}
+
+
+				</div>
+			</section>
+
+ {% endblock %}
